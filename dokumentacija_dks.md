@@ -32,7 +32,6 @@ Parametri fizičkih dimenzija stabla
 
 | Atribut | Tip | Opis | Dostupne vrijednosti |
 |---------|-----|------|----------------------|
-
 | Promjer | double | Promjer stabla u metrima | - |
 | Visina | double | Ukupna visina stabla | - |
 | Baza krošnje | double | Promjer baze krošnje | - |
@@ -130,8 +129,7 @@ Preporučene intervencije
    - Boolean atributi nemaju dodatne parametre
 
 5. **Digitalizacija procesa:**
-   - Atributi su posebno dizajnirani za korištenje u mobilnoj aplikaciji za terensko prikupljanje podataka
-   - Mobilna aplikacija će omogućiti direktan unos podataka u terenskim uvjetima
+   - Atributi su dizajnirani za korištenje u mobilnoj aplikaciji za terensko prikupljanje podataka koja će biti izrađena za prikupljanje podataka na terenu 
    - Podaci će se automatski sinkronizirati s centralnom bazom podataka
    - Digitalni pristup eliminira potrebu za papirnatim obrascima i ručnim prepisivanjem podataka
    - Struktura atributa osigurava konzistentnost i točnost prikupljenih podataka
