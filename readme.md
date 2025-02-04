@@ -23,6 +23,8 @@ Ovaj projekt razvija **Digitalni katastar stabala** za Arboretum Opeka, koriste�
 3. **Izrada interaktivne web aplikacije** 
 4. **Implementacija mobilne aplikacije za prikupljanje podataka na terenu**
 
+Detaljna metodologija prikupljanja podataka i struktura atributa za izradu baze podataka dostupna je u [dokumentaciji sustava](dokumentacija_dks.md).
+
 ## 💰 Financiranje
 Projekt financira **Europska unija – NextGenerationEU** u okviru **NPOO.C1.6.R1-I1.01-V1.0009**.
 
