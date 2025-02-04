@@ -27,4 +27,4 @@ Ovaj projekt razvija **Digitalni katastar stabala** za Arboretum Opeka, koriste�
 Projekt financira **Europska unija – NextGenerationEU** u okviru **NPOO.C1.6.R1-I1.01-V1.0009**.
 
 ## 📞 Kontakt
-Za više informacija, obratite se na [email@example.com](mailto:email@example.com).
+Za više informacija, obratite se na [mfrntic@gmail.com](mailto:mfrntic@gmail.com).
