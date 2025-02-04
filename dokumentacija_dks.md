@@ -22,11 +22,13 @@ Atributi su organizirani u 6 glavnih grupa sa sljedećom strukturom:
 ### 0. Bazni atributi
 Bazni atributi su dio svakog zapisa geografske značajke (stabla).
 
-- **ID** (unique identifier - UID)
-- **Datum mjerenja** (date) 
-- **Geometrija** (geometry WKT feature - point, line, polygon - uglavnom point)
-- **Korisnik** (korisničko ime korisnika koji je unio podatke)
-- **Botanička vrsta** (veza na šifru botaničke vrste)
+| Atribut | Tip | Opis | Vrijednosti |
+|---------|-----|------|-------------|
+| ID | text | Jedinstveni identifikator (UID) | - |
+| Datum mjerenja | date | Datum kada je izvršeno mjerenje | - |
+| Geometrija | geometry | WKT geometrijska značajka (točka, linija, poligon - najčešće točka) | - |
+| Korisnik | text | Korisničko ime osobe koja je unijela podatke | - |
+| Botanička vrsta | text | Veza na šifru botaničke vrste | - |
 
 ### 1. Fizičke karakteristike i starost
 Parametri fizičkih dimenzija stabla i procjenjena starost
@@ -52,7 +54,7 @@ Karakteristike prizemnog dijela stabla
 | Hipertrofije | enum | Prisutnost izraslina | Benigne, Maligne |
 | Gljiva | enum | Vrsta gljivične infekcije | Phellinus pini, Ganoderma sp., Innotus sp., Phomopsis sp., Schizophyllum commune, Bolest iglica, Biscogniauxia mediterranea |
 | Kukci | enum | Vrste štetnika | Mravi, Ksilofagi, Potkornjaci, Defolijator, Kornjaši truležari (listorošci), Crvena palmina pipa |
-| Kolizija sa infrastrukturom | bool | Kolizija sa infrastrukturnim objektom (cesta, građevina, itd.) | Da/Ne |
+| Kolizija (sa infrastrukturom) | bool | Kolizija sa infrastrukturnim objektom (cesta, građevina, itd.) | Da/Ne |
 | Plodišta truležnica | enum | Količina plodišta | Malobrojna, Brojna, Vrlo brojna |
 | Ostali nametnici | enum | Vrste nametnika | Bršljan, Imela, Bakterije |
 
@@ -104,14 +106,14 @@ Karakteristike krošnje
 | Ostali nametnici | text | Ostale vrste nametnika | - | 
 
 ### 5. Opće stanje
-Globalna evaluacija i vitalitet
+Opća evaluacija, TRAQ, bonitet i vitalitet
 
 | Atribut | Tip | Opis | Vrijednosti |
 |---------|-----|------|-------------|
 | Vitalitet | enum | Vitalnost stabla | Vrlo dobar, Dobar, Srednji (oslabljen), Narušen (potrebno pratiti), Loš, Vrlo loš, Nepoznat / Nije specificiran |
 | TRAQ prije sanacije | enum | Razina rizika prije intervencije | Malen, Umjeren, Visok, Ekstreman |
 | TRAQ nakon sanacije | enum | Očekivani rizik nakon intervencije | Malen, Umjeren, Visok, Ekstreman |
-| Bonitet | enum | Kvalitativna ocjena | 1E, 1, 2, 3, 4, 5 |
+| Bonitet | enum | Kvalitativna ocjena | 1, 2, 3, 4, 5 |
 | Loše | bool | Opće loše stanje | Da/Ne |
 | Narušena statika | bool | Problemi sa statikom | Da/Ne |
 | Sušac | bool | Suhoća stabla | Da/Ne | 
