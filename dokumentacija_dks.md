@@ -1,8 +1,9 @@
-# Dokumentacija sustava za praćenje stanja drvenastih jedinki
+# Dokumentacija sustava za praćenje stanja drvenastih jedinki (zeleni katastar)
 
 ## Sadržaj
 - [Struktura atributa](#struktura-atributa)
 - [Grupe atributa](#grupe-atributa)
+  - [Osnovni (bazni) atributi](#osnovni-bazni-atributi)
   - [1. Fizičke karakteristike i starost](#1-fizičke-karakteristike-i-starost)
   - [2. Pridanak](#2-pridanak)
   - [3. Deblo](#3-deblo)
@@ -21,11 +22,12 @@
 Atributi su organizirani u 6 glavnih grupa sa sljedećom strukturom:
 - **Naziv atributa**
 - **Tip podatka** (bool/text/double)
+- **Opis**
 - **Dopuštene vrijednosti** (ako postoje)
 
 ## Grupe atributa
 
-### 0. Bazni atributi
+### Osnovni (bazni) atributi
 Bazni atributi su dio svakog zapisa geografske značajke (stabla).
 
 | Atribut | Tip | Opis | Vrijednosti |
@@ -132,12 +134,13 @@ Preporučene intervencije
 
 | Atribut | Tip | Opis | Vrijednosti |
 |---------|-----|------|-------------|
-| Prorijediti | enum | Postotak prorjeđivanja | 10%, 20%, 30%, 40% |
 | Hitno | bool | Hitnost intervencije | Da/Ne |
+| Prorijediti | enum | Postotak prorjeđivanja | 10%, 20%, 30%, 40% |
 | Sidriti | bool | Potreba za stabilizacijom | Da/Ne |
 | Rušiti | bool | Preporuka rušenja | Da/Ne |
 | Frezati | bool | Preporuka frezanja | Da/Ne |
 | Orezati | bool | Preporuka rezanja | Da/Ne |
+| Sanirati | bool | Preporuka sanacije | Da/Ne |
 
 ## Konvencije i napomene
 1. **Tipovi podataka:**
@@ -246,5 +249,10 @@ Baza podataka je organizirana u dvije glavne sheme:
 
 ### Sigurnosni model
 - Svaki korisnik mora imati dodijeljenu barem jednu ulogu
-- Sistemski korisnici (system_user = true) imaju posebna prava
-- Lozinke se pohranjuju isključivo u kriptiranom obliku
+- Sistemski korisnici (system_user = true) imaju posebna prava, ne mogu se obrisati niti uređivati
+- Lozinke se pohranjuju isključivo u kriptiranom obliku (sha256)
+- Korisničko ime mora biti jedinstveno
+- Email mora biti jedinstven
+ 
+
+

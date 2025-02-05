@@ -11,7 +11,7 @@ Ovaj projekt razvija **Digitalni katastar stabala** za Arboretum Opeka, koriste�
 - 🌍 **Dvojezično sučelje** (hrvatski i engleski) - nije predviđeno osnovnom ponudom
 - 🔗 **Mogućnost integracije s nacionalnim sustavima** (ISPU - Registar zelene infrastrukture) - nije predviđeno osnovnom ponudom
 
-## 🛠 Tehnologije
+## 🛠️ Tehnologije
 - **Backend:** Node.js
 - **Frontend:** React / OpenLayers za GIS vizualizaciju
 - **Baza podataka:** PostgreSQL + PostGIS
@@ -23,7 +23,7 @@ Ovaj projekt razvija **Digitalni katastar stabala** za Arboretum Opeka, koriste�
 3. **Izrada interaktivne web aplikacije** 
 4. **Implementacija mobilne aplikacije za prikupljanje podataka na terenu**
 
-Detaljna metodologija prikupljanja podataka i struktura atributa za izradu baze podataka dostupna je u [dokumentaciji sustava](dokumentacija_dks.md).
+Prijedlog metodologije prikupljanja podataka i struktura atributa za izradu baze podataka dostupna je u [dokumentaciji sustava](dokumentacija_dks.md).
 
 ## 💰 Financiranje
 Projekt financira **Europska unija – NextGenerationEU** u okviru **NPOO.C1.6.R1-I1.01-V1.0009**.
