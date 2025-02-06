@@ -1,0 +1,12 @@
+{
+  "name": "opeke",
+  "version": "1.0.0",
+  "description": "Ovaj projekt razvija **Digitalni katastar stabala** za Arboretum Opeka, koristeći **GIS tehnologiju** za evidentiranje i praćenje zdravlja drvenastih biljnih jedinki. Cilj je uspostaviti **interaktivni digitalni sustav** koji omogućuje inventarizaciju, analizu i interpretaciju podataka o stablima, uključujući ekološke benefite i zdravstvene parametre.",
+  "main": "index.js",
+  "scripts": {
+    "pandoc": "pandoc dokumentacija_dks.md --pdf-engine=pdflatex -o dokumentacija_dks.pdf",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
