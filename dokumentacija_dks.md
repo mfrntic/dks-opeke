@@ -43,11 +43,17 @@ Parametri fizičkih dimenzija stabla i procjenjena starost
 
 | Atribut | Tip | Opis | Dostupne vrijednosti |
 |---------|-----|------|----------------------|
-| Promjer | double | Promjer stabla u metrima | - |
-| Visina | double | Ukupna visina stabla | - |
+| Promjer | double | Promjer stabla u cm | - |
+| Promjer2 | double | Promjer drugi stabla u cm | - |
+| Opseg | double | Opseg stabla u cm | - |
+| Visina | double | Ukupna visina stabla u metrima | - |
 | Visina debla | double | Visina debla do krošnje | - |
-| Radius krošnje | double | Radijus širenja krošnje | - |
+| Širina krošnje (N) | double | Radijus širenja krošnje sjever | - |
+| Širina krošnje (E) | double | Radijus širenja krošnje  | - |
+| Širina krošnje (W) | double | Radijus širenja krošnje | - |
+| Širina krošnje (S) | double | Radijus širenja krošnje | - |
 | Starost | integer | Procjenjena starost stabla u godinama | - |
+| Status | integer | Trenutni status stabla | Mrtvo, Živo, Sumnjivo |
 
 ### 2. Pridanak
 Karakteristike prizemnog dijela stabla
