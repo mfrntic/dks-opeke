@@ -1,6 +1,7 @@
 # Dokumentacija sustava za praćenje stanja drvenastih jedinki (zeleni katastar)
 
 ## Sadržaj
+- [Katastri](#katastri)
 - [Struktura atributa](#struktura-atributa)
 - [Grupe atributa](#grupe-atributa)
   - [Osnovni (bazni) atributi](#osnovni-bazni-atributi)
@@ -18,7 +19,17 @@
   - [Konvencije imenovanja](#konvencije-imenovanja)
   - [Sigurnosni model](#sigurnosni-model)
 
-## Struktura atributa
+## Katastri
+Osnovna tablica je tablica zelenih katastara. Svaki katastar ima slijedeće atribute:
+- **IDKatastar** (integer)
+- **Naziv** (text)
+- **Opis** (text)
+- **Datum** (date)
+
+## Stabla
+Svaki katastar sadrži stabla. Svako stablo može imati atribute koji su navedeni u nastavku dokumenta
+
+## Struktura atributa stabla
 Atributi su organizirani u 6 glavnih grupa sa sljedećom strukturom:
 - **Naziv atributa**
 - **Tip podatka** (bool/text/double)
@@ -34,7 +45,7 @@ Bazni atributi su dio svakog zapisa geografske značajke (stabla).
 |---------|-----|------|-------------|
 | ID | text | Jedinstveni identifikator (UID) | - |
 | Datum mjerenja | date | Datum kada je izvršeno mjerenje | - |
-| Geometrija | geometry | WKT geometrijska značajka (točka, linija, poligon - najčešće točka) | - |
+| Geometrija | geometry | WKT geometrijska značajka (točka) | - |
 | Korisnik | text | Korisničko ime osobe koja je unijela podatke | - |
 | Botanička vrsta | text | Veza na šifru botaničke vrste | - |
 
@@ -187,78 +198,3 @@ Preporučene intervencije
    - Podaci će se automatski sinkronizirati s centralnom bazom podataka
    - Digitalni pristup eliminira potrebu za papirnatim obrascima i ručnim prepisivanjem podataka
    - Struktura atributa osigurava konzistentnost i točnost prikupljenih podataka
-
-## Baza podataka
-
-### Struktura baze podataka
-![Database schema showing multiple tables including public.attribute_groups, public.tree_species, public.cadastres, security.users, and their relationships](tree_cadastre.pgerd.png)
-
-### Sheme
-Baza podataka je organizirana u dvije glavne sheme:
-
-1. **public** - sadrži osnovne tablice za rad s podacima
-2. **security** - sadrži tablice vezane uz autentifikaciju i autorizaciju
-
-### Ključne tablice
-
-#### Public shema:
-- **attribute_groups** - Definicije grupa atributa
-  - attribute_group_name (char varying(30)) - naziv grupe
-  - attribute_group_label (char varying(100)) - oznaka grupe
-  - attribute_group_ordinal (integer) - redni broj grupe
-  - is_enabled (boolean) - status aktivnosti
-
-- **tree_species** - Katalog botaničkih vrsta
-  - species_id (integer) - jedinstveni identifikator vrste
-  - species_scientific_name (char varying(150)) - znanstveni naziv
-  - species_croatian_name (char varying(150)) - hrvatski naziv
-
-- **cadastres** - Katastarske općine
-  - cadastre_id (integer) - identifikator katastarske općine
-  - cadastre_name (char varying(100)) - naziv katastarske općine
-  - center_point (geometry) - središnja točka
-  - cadastre_settings (json) - postavke za katastarsku općinu
-
-- **features** - Glavna tablica za pohranu podataka o stablima
-  - feature_id (uuid) - jedinstveni identifikator stabla
-  - cadastre_id (integer) - veza na katastarsku općinu
-  - species_id (integer) - veza na botaničku vrstu
-  - geom (geometry) - geometrija lokacije stabla
-  - note (char varying(500)) - bilješke
-
-- **feature_photos** - Fotografije stabala
-  - photo_id (bigint) - identifikator fotografije
-  - feature_id (uuid) - veza na stablo
-  - photo_path (char varying(255)) - putanja do fotografije
-
-#### Security shema:
-- **users** - Korisnici sustava
-  - user_id (integer) - identifikator korisnika
-  - user_name (char varying(50)) - korisničko ime
-  - user_email (char varying(100)) - email adresa
-  - password_hash (text) - kriptirana lozinka
-  - system_user (boolean) - oznaka sistemskog korisnika
-
-- **roles** - Uloge u sustavu
-  - role_id (integer) - identifikator uloge
-  - role_name (char varying(50)) - naziv uloge
-  - role_description (text) - opis uloge
-
-- **user_roles** - Veze korisnika i uloga
-  - user_id (integer) - veza na korisnika
-  - role_id (integer) - veza na ulogu
-
-### Konvencije imenovanja
-1. Nazivi tablica su u množini (features, users, roles)
-2. Primarni ključevi koriste prefiks imena tablice (user_id, role_id)
-3. Strani ključevi zadržavaju ime primarnog ključa na koji se referenciraju
-
-### Sigurnosni model
-- Svaki korisnik mora imati dodijeljenu barem jednu ulogu
-- Sistemski korisnici (system_user = true) imaju posebna prava, ne mogu se obrisati niti uređivati
-- Lozinke se pohranjuju isključivo u kriptiranom obliku (sha256)
-- Korisničko ime mora biti jedinstveno
-- Email mora biti jedinstven
- 
-
-
